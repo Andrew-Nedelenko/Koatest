@@ -1,8 +1,6 @@
-const http = require('http');
 const koa = require('koa');
 const app = new koa();
 const bodyParser = require('koa-bodyparser');
-const views = require('koa-views');
 const Router = require('koa-router');
 const router = new Router();
 const serve = require('koa-static')
@@ -24,42 +22,16 @@ app.use(async (ctx, next) => {
 })
 
 //static folder 
-app.use(serve(__dirname + '/public'));
-
-//view engine
-
-  app.use(views(__dirname + '/views', {
-    extension: 'hbs',
-    map: { hbs: 'handlebars' },
-    options: {
-        partials: {
-          header: 'partials/header',
-          footer: 'partials/footer'
-        }
-      }
-  }));
+app.use(serve(__dirname + '/app'));
 
   
   //routes
   router.get('/', async (ctx) => {
-    await ctx.render('index', {
-      msg: 'test',
-      title: 'Main Page'
-    });
+    await ctx.render('index');
   });
-  
-  router.get('*', async (ctx) => {
-    await ctx.render('404', {
-      msg: 'Page not found',
-      title: 'Not found'
-    });
-  });
-
-
-
 
 app.use(router.routes());
 app.use(router.allowedMethods());
 
 
-http.createServer(app.callback()).listen(3500);
+app.listen(3000);
