@@ -30,6 +30,7 @@ app.use(serve(__dirname + '/app'));
     await ctx.render('index');
   });
 
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 
