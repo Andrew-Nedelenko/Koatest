@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export default class User extends Component {
   render() {
-      const {name, email, img, id} = this.props
+      const {name, email, img, id} = this.props.m
     return (
         <_User>
         <h2>{name}</h2>

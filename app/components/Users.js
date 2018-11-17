@@ -12,6 +12,7 @@ class Users extends Component {
       constructor(){
         super()
         this.state = {
+          resize: true,
           contacts: [
             {
               id: 1,
@@ -38,16 +39,28 @@ class Users extends Component {
       const { contacts } = this.state
     return (
       <Nav>
+        <h3>{this.state.resize ? foo(): foo2()}</h3>
         {contacts.map(m => <User 
-        name={m.name}
-        email={m.email}
-        img={m.img}
+        m={m}
         id={m.id}
         />)}
       </Nav>
     )
   }
 }
+
+function foo() {
+  
+  return window.innerHeight
+}
+
+function foo2() {
+  
+  return window.innerWidth
+}
+
+
+
 
 const Nav = styled.nav`
 
@@ -62,6 +75,5 @@ ul{
 
 `
   
-
 
 export default Users
