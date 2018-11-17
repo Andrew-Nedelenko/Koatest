@@ -9,6 +9,9 @@ class Users extends Component {
         email: PropTypes.string.isRequired,
         img: PropTypes.string.isRequired
       }
+      change = (name, e) => {
+        console.log(this.state.resize)
+      }
       constructor(){
         super()
         this.state = {
@@ -39,7 +42,9 @@ class Users extends Component {
       const { contacts } = this.state
     return (
       <Nav>
-        <h3>{this.state.resize ? foo(): foo2()}</h3>
+        <h3 onClick={() => this.setState({
+          resize: !this.state.resize
+        })}>{this.state.resize ? foo(): foo2()}</h3>
         {contacts.map(m => <User 
         m={m}
         id={m.id}
