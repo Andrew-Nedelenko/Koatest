@@ -3,7 +3,9 @@ const app = new koa();
 const bodyParser = require('koa-bodyparser');
 const Router = require('koa-router');
 const router = new Router();
-const serve = require('koa-static')
+const cors = require('@koa/cors')
+
+app.use(cors())
 
 app.use(bodyParser());
 
@@ -21,13 +23,15 @@ app.use(async (ctx, next) => {
     ctx.set('X-Responce-Time', `${ms}ms`)
 })
 
-//static folder 
-app.use(serve(__dirname + '/app'));
 
   
   //routes
-  router.get('/', async (ctx) => {
-    await ctx.render('index');
+  router.get('/testapi', async (ctx) => {
+    ctx.body = await {
+      a: [1,2,3,4],
+      b: 2,
+      c: 3
+    }
   });
 
 

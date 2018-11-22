@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import NavBar from './components/NavBar'
 import Users from './components/Users'
+import {data} from './components/Users'
 
 class Main extends Component {
   render() {    
@@ -15,7 +16,7 @@ class Main extends Component {
           </Title>
           <NavBar/>
           <MainCont>
-            <h2>main</h2>
+            <h2 onClick={data}>getData</h2>
             <Users/>
           </MainCont>
       </Wrapper>
@@ -41,6 +42,7 @@ const MainCont = styled.header`
   color: green;
   h2{
     color: rebeccapurple;
+    cursor: pointer;
   }
 `
 

@@ -1,21 +1,12 @@
+import as from 'babel-polyfill'
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import User from './User'
 
 class Users extends Component {
-    static propTypes = {
-        name: PropTypes.string.isRequired,
-        email: PropTypes.string.isRequired,
-        img: PropTypes.string.isRequired
-      }
-      change = (name, e) => {
-        console.log(this.state.resize)
-      }
       constructor(){
         super()
         this.state = {
-          resize: true,
           contacts: [
             {
               id: 1,
@@ -42,9 +33,6 @@ class Users extends Component {
       const { contacts } = this.state
     return (
       <Nav>
-        <h3 onClick={() => this.setState({
-          resize: !this.state.resize
-        })}>{this.state.resize ? foo(): foo2()}</h3>
         {contacts.map(m => <User 
         m={m}
         id={m.id}
@@ -54,17 +42,14 @@ class Users extends Component {
   }
 }
 
-function foo() {
-  
-  return window.innerHeight
+
+export const data = async () => {
+  const fetchData = await fetch('http://localhost:3000/testapi')
+  const json = await fetchData.json()
+  console.log(json)
 }
 
-function foo2() {
-  
-  return window.innerWidth
-}
-
-
+data()
 
 
 const Nav = styled.nav`
