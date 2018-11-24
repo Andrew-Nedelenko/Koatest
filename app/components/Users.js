@@ -1,4 +1,4 @@
-import as from 'babel-polyfill'
+import 'babel-polyfill'
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import User from './User'

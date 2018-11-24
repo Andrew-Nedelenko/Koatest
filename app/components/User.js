@@ -8,7 +8,7 @@ export default class User extends Component {
     return (
         <_User>
         <h2>{name}</h2>
-        <h3>{email}</h3>
+        <h3>{email.toLowerCase()}</h3>
         <img src={img} alt=""/>
         <h4>{id}</h4>
     </_User>
