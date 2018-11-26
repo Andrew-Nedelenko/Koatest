@@ -9,7 +9,7 @@ export default class User extends Component {
         <_User>
         <h4>{id}</h4>
         <h2>{name}</h2>
-        <h3>{email}</h3>
+        <h3>{email.toLowerCase()}</h3>
         <img src={img} alt=""/>
     </_User>
     )
