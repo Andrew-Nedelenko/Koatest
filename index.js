@@ -31,7 +31,11 @@ app.use(async (ctx, next) => {
       [{
         "id":1,
         "name":"Tom",
-        "age":24
+        "age":24,
+        "hoobies": [
+          "music",
+          "dance"
+        ]
     },
     {
         "id":2,

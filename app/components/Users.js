@@ -51,7 +51,7 @@ class Users extends Component {
         />)}
         <div>
           <ul>
-            {saveData.map(n => (<li key={n.key}>{n.name}: {n.age}</li>))}
+            {saveData.map(n => (<li key={n.id}>{n.name}: {n.age}</li>))}
           </ul>
         </div>
    
