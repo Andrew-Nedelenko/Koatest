@@ -7,10 +7,10 @@ export default class User extends Component {
       const {name, email, img, id} = this.props.m
     return (
         <_User>
+        <h4>{id}</h4>
         <h2>{name}</h2>
         <h3>{email}</h3>
         <img src={img} alt=""/>
-        <h4>{id}</h4>
     </_User>
     )
   }

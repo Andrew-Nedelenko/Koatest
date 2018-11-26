@@ -39,8 +39,9 @@ const _NavBar = styled.nav`
         position: absolute;
         li{
           padding: 5px 10px 0 0;
+          background-color: gold;
           a{
-
+            color: black;
           }
         }
       }

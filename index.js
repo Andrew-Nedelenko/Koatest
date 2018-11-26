@@ -27,11 +27,23 @@ app.use(async (ctx, next) => {
   
   //routes
   router.get('/testapi', async (ctx) => {
-    ctx.body = await {
-      a: [1,2,3,4],
-      b: 2,
-      c: 3
-    }
+    ctx.body = 
+      [{
+        "id":1,
+        "name":"Tom",
+        "age":24
+    },
+    {
+        "id":2,
+        "name":"Bob",
+        "age":27
+    },
+    {
+        "id":3,
+        "name":"Alice",
+        "age":"23"
+    }]
+    
   });
 
 
@@ -39,4 +51,4 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 
-app.listen(3000);
+app.listen(3200);
