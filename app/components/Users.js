@@ -53,6 +53,7 @@ class Users extends Component {
           <ul>
             {saveData.map(n => (<li key={n.id}>{n.name}: {n.age}</li>))}
           </ul>
+          <div>{saveData.map(n => (<img src={n.img}/>))}</div>
         </div>
    
       </Nav>
@@ -69,6 +70,9 @@ ul{
         width: 150px;
       }
     }
+  }
+  img{
+    width: 100px;
   }
 
 `

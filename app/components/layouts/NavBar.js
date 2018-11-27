@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 export default class NavBar extends Component {
   render() {
@@ -25,23 +26,30 @@ export default class NavBar extends Component {
 }
 
 const _NavBar = styled.nav`
-  position: absolute;
-  top: 4px;
-  left: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: gold;
+  width: 100%;
+  height: 50px;
   ul{
     display: flex;
     list-style-type: none;
+    padding: 15px 0 0 60px;
+    position: relative;
     li{
       padding: 0 5px;
       ul{
         display: none;
         flex-direction: column;
         position: absolute;
+        padding: 0;
         li{
           padding: 5px 10px 0 0;
           background-color: gold;
           a{
             color: black;
+            
           }
         }
       }

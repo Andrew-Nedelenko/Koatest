@@ -4,13 +4,12 @@ import styled from 'styled-components'
 export default class User extends Component {
     
   render() {
-      const {name, email, img, id} = this.props.m
+      const {name, email, id} = this.props.m
     return (
         <_User>
         <h4>{id}</h4>
         <h2>{name}</h2>
         <h3>{email.toLowerCase()}</h3>
-        <img src={img} alt=""/>
     </_User>
     )
   }
