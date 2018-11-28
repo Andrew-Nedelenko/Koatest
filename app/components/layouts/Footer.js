@@ -1,20 +1,25 @@
 import React, { Component } from 'react'
-import stl from 'styled-components'
+import styled from 'styled-components'
 
-class Footer extends Component {
+export class Footer extends Component {
 render() {
     return (
         <_Footer>
-        footer
+          <footer className="footer">footer</footer>
       </_Footer>
     )
   }
 }
 
-const _Footer = stl.footer`
+
+export const color = "green"
+
+const _Footer = styled.div`
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    .footer{
+      color: ${color};
+    }
 `
-
-
-export default Footer

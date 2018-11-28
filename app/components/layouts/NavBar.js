@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
-export default class NavBar extends Component {
+export class NavBar extends Component {
   render() {
     return (
         <_NavBar>
             <ul>
-              <li><a href="/">Home</a>
+              <li><Link to="/">Home</Link>
                 <ul>
-                  <li><a href="#">News</a></li>
+                  <li><Link to="/news">News</Link></li>
                   <li><a href="#">Links</a></li>
                 </ul>
               </li>
-              <li><a href="/">About</a>
+              <li><Link to="/about">About</Link>
               <ul>
                   <li><a href="#">News</a></li>
                   <li><a href="#">Links</a></li>
@@ -32,6 +32,7 @@ const _NavBar = styled.nav`
   background-color: gold;
   width: 100%;
   height: 50px;
+  opacity: .8;
   ul{
     display: flex;
     list-style-type: none;
@@ -49,7 +50,6 @@ const _NavBar = styled.nav`
           background-color: gold;
           a{
             color: black;
-            
           }
         }
       }
