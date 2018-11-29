@@ -4,10 +4,10 @@
   "description": "testing koa",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/index.html",
+    "build": "parcel build src/index.html --out-dir dist --public-url ./",
     "back": "nodemon",
     "front": "parcel -p 4000 watch src/index.html --open --no-cache",
-    "start": "parcel build src/index.html && parcel src/index.html"
+    "start": "parcel src/index.html --out-dir dist"
   },
   "repository": {
     "type": "git",
