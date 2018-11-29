@@ -21,7 +21,7 @@ export const _Index = styled.main`
     margin-top: 50px;
     .main{
         text-align: center;
-        background-color: gray;
+        background-color: palegoldenrod;
         color: ${color}
     }
 `
