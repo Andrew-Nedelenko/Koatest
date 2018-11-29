@@ -5,6 +5,9 @@ const Router = require('koa-router');
 const router = new Router();
 const cors = require('@koa/cors')
 const helmet = require('koa-helmet')
+const serve = require('koa-static-server')
+
+app.use(serve({rootDir: 'dist'}))
 
 app.use(cors())
 app.use(helmet())
