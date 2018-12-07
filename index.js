@@ -60,6 +60,11 @@ app.use(async (ctx, next) => {
     
   });
 
+  router.post('/', async ctx => {
+      console.log(ctx.response.body.username)
+      await ctx.redirect('/')
+  })
+
 
 app.use(router.routes());
 app.use(router.allowedMethods());
