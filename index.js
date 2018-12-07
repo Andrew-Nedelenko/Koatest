@@ -30,7 +30,7 @@ app.use(async (ctx, next) => {
 
   
   //routes
-  router.get('/testapi', async (ctx) => {
+  router.get('/testapi', async ctx => {
     ctx.body = 
       [{
         "id":1,

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import User from './User'
 
-class Users extends Component {
+export class Users extends Component {
       constructor(){
         super()
         this.state = {
@@ -32,7 +32,7 @@ class Users extends Component {
       }
       async componentDidMount() {
         try{
-          const data = await fetch('http://localhost:3200/testapi')
+          const data = await fetch('http://localhost:3201/testapi')
           const json = await data.json()
           console.log(json)
           await this.setState({ saveData: json }) 
@@ -63,6 +63,7 @@ class Users extends Component {
 
 
 const Nav = styled.nav`
+margin-top: 50px;
 ul{
   list-style-type: none;
     li{
@@ -77,5 +78,3 @@ ul{
 
 `
   
-
-export default Users

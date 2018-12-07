@@ -9,7 +9,7 @@ export class NavBar extends Component {
             <ul>
               <li><Link to="/">Home</Link>
                 <ul>
-                  <li><Link to="/news">News</Link></li>
+                  <li><Link to="/users">Users</Link></li>
                   <li><a href="#">Links</a></li>
                 </ul>
               </li>

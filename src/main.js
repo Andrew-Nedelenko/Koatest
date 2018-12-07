@@ -5,6 +5,7 @@ import {NavBar} from './components/layouts/NavBar'
 import {Footer} from './components/layouts/Footer'
 import {Index} from './components/pages/Index'
 import {About} from './components/pages/About'
+import {Users} from './components/Users'
 
 
 class Main extends Component {
@@ -14,8 +15,8 @@ class Main extends Component {
           <div>
           <NavBar/>
             <Route exact path='/' component={Index}/>
-            <Route exact path='/about' component={About}/>
-            <Route exact path='/news' component={() => (<div>just news</div>)}/>
+            <Route path='/about' component={About}/>
+            <Route path='/users' component={Users}/>
           <Footer/>
           </div>
       </BrowserRouter>
