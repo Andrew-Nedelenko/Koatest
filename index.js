@@ -61,8 +61,8 @@ app.use(async (ctx, next) => {
   });
 
   router.post('/', async ctx => {
-      console.log(ctx.response.body.username)
-      await ctx.redirect('/')
+      console.log(ctx.request.body.username)
+      ctx.status = 200
   })
 
 

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 export class Index extends Component {
     static propTypes = {
-        value: PropTypes.string.isRequired || PropTypes.undefined.isRequired
+        value: PropTypes.string.isRequired
     }
     state = {
         value: ''
@@ -31,6 +31,7 @@ export class Index extends Component {
             },
         })
         console.log(data)
+        console.log(data.status)
     }
     render() {
     return (
@@ -41,7 +42,7 @@ export class Index extends Component {
             <div>
               <form onSubmit={this.formSubmit}>
               <label htmlFor="">
-               <input type="text" name='username' onInput={this.changeNum}/>
+               <input type="text" name='username' value={this.state.value} onInput={this.changeNum}/>
                </label>
                <label htmlFor="">
                 <input type="submit"/>

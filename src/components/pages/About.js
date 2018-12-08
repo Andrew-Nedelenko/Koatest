@@ -9,11 +9,9 @@ export class About extends Component {
       sW: 5,
       size: 500
     }
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = () => {
     this.setState({sW: event.target.value});
   }
 
