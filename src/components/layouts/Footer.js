@@ -5,7 +5,7 @@ export class Footer extends Component {
 render() {
     return (
         <_Footer>
-          <footer className="footer">footer</footer>
+          <footer className="footer"></footer>
       </_Footer>
     )
   }

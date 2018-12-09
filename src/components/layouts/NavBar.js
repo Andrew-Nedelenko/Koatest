@@ -33,6 +33,7 @@ const _NavBar = styled.nav`
   width: 100%;
   height: 50px;
   opacity: .8;
+  z-index: 30;
   ul{
     display: flex;
     list-style-type: none;

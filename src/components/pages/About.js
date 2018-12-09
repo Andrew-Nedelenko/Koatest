@@ -3,40 +3,57 @@ import {NavBar} from '../layouts/NavBar'
 import styled from 'styled-components'
 
 export class About extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
-      sW: 5,
-      size: 500
+      borderWidth: 5,
+      size: 1200,
+      gridColor: 'grey'
     }
   }
 
   handleChange = () => {
-    this.setState({sW: event.target.value});
+    this.setState({borderWidth: event.target.value});
   }
 
   render() {
     const d = "M100 85 L100 10 L410 10 L410 370 L100 370 L100 85 L180 85 L385 290 L385 10"
-    const { sW, size } = this.state
+    const { borderWidth, size, gridColor } = this.state
     return (
       <div>
           <NavBar/>
           <_SvgBlock>
-          <svg height={size} width={size}> 
+          <svg className='figure' height={size} width={size}> 
             <path 
             d={d}
             stroke='red'
-            strokeWidth={sW}
+            strokeWidth={borderWidth}
             fill='transparent'
             >
             </path>
+          </svg>
+          <svg className='X' height={size} width={size}>
+            <path
+              d='M1 100 L1000 100'
+              stroke={gridColor}
+              strokeWidth='2px'
+              fill='transparent'
+            ></path>
+          </svg>
+          <svg className='Y' height={size} width={size}>
+            <path
+              d='M500 10 L500 1100'
+              stroke={gridColor}
+              strokeWidth='2px'
+              fill='transparent'
+            ></path>
           </svg>
           </_SvgBlock>
           <_FormBlock>
             <form>
               <label>
                 BorderChange:
-                <input type="number" value={sW} onChange={this.handleChange} />
+                <input type="number" value={borderWidth} onChange={this.handleChange} />
               </label>
             </form>
           </_FormBlock>
@@ -46,15 +63,29 @@ export class About extends Component {
 }
 
 const _SvgBlock = styled.div`
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  width: 100%;
+  .figure{
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    z-index: 1;
+  }
+  .X{
+    position: absolute;
+    top: 70%;
+    left: 50px;
+    z-index: 4
+  }
+  .Y{
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    z-index: 4
+  }
 `
 
 const _FormBlock = styled.div`
   border-left: 1px solid green;
-  width: 200px;
+  width: 100px;
   height: 100%;
   position: absolute;
   right: 100px;
