@@ -2,6 +2,7 @@ import 'babel-polyfill'
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import User from './User'
+import {Ubuntu} from '../components/pages/Auth'
 
 export class Users extends Component {
       constructor(){
@@ -64,6 +65,7 @@ export class Users extends Component {
 
 const Nav = styled.nav`
 margin-top: 50px;
+font-family: ${Ubuntu};
 ul{
   list-style-type: none;
     li{

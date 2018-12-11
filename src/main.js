@@ -6,7 +6,7 @@ import {Footer} from './components/layouts/Footer'
 import {Index} from './components/pages/Index'
 import {About} from './components/pages/About'
 import {Users} from './components/Users'
-
+import {Auth} from './components/pages/Auth'
 
 class Main extends Component {
   render() {    
@@ -17,6 +17,7 @@ class Main extends Component {
             <Route exact path='/' component={Index}/>
             <Route path='/about' component={About}/>
             <Route path='/users' component={Users}/>
+            <Route path='/auth' component={Auth}/>
           <Footer/>
           </div>
       </BrowserRouter>

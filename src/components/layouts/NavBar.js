@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import {Ubuntu} from '../pages/Auth'
 
 export class NavBar extends Component {
   render() {
@@ -10,7 +11,6 @@ export class NavBar extends Component {
               <li><Link to="/">Home</Link>
                 <ul>
                   <li><Link to="/users">Users</Link></li>
-                  <li><a href="#">Links</a></li>
                 </ul>
               </li>
               <li><Link to="/about">About</Link>
@@ -19,6 +19,7 @@ export class NavBar extends Component {
                   <li><a href="#">Links</a></li>
                 </ul>
               </li>
+                  <li><Link to="/auth">Auth</Link></li>
             </ul>
       </_NavBar>
     )
@@ -34,6 +35,7 @@ const _NavBar = styled.nav`
   height: 50px;
   opacity: .8;
   z-index: 30;
+  font-family: ${Ubuntu};
   ul{
     display: flex;
     list-style-type: none;
