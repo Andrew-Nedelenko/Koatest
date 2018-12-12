@@ -4,8 +4,8 @@ bodyParser = require('koa-bodyparser'),
 router = require('./routes/router'),
 cors = require('@koa/cors'),
 helmet = require('koa-helmet'),
-serve = require('koa-static-server'),
-fs = require('fs');
+serve = require('koa-static-server');
+
 
 app.use(serve({rootDir: 'dist'}))
 .use(cors())

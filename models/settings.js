@@ -1,7 +1,6 @@
-const mysql = require('mysql2'),
-Sequelize = require('sequelize'),
+const Sequelize = require('sequelize'),
 sequelize = new Sequelize('testdb', 'root', 'root', {
-    host: localhost,
+    host: "localhost",
     dialect: 'mysql',
     define: {
         charset: 'utf8',
@@ -18,5 +17,5 @@ sequelize = new Sequelize('testdb', 'root', 'root', {
 });
 
 module.exports = {
-    sequelize
+    sequelize, Sequelize
 }

@@ -12,7 +12,6 @@ export class Auth extends Component {
         password: '',
         password2: '',
         post: '',
-        image: '',
         errors: []
     }
     checkusername = e => {
@@ -31,18 +30,9 @@ export class Auth extends Component {
         console.log(event.target.value)
         this.state.password2 = event.target.value
     }
-    checkpost = e => {
-        console.log(event.target.value)
-        this.state.post = event.target.value
-    }
-
-    checkimg = e => {
-        console.log(event.target.value)
-    }
 
     formSubmit = async e => {
         e.preventDefault()
-        console.log(this.state.value)
         
         const {username, email, password, post} = this.state;
         const data = await fetch('http://localhost:3201', {
@@ -54,46 +44,36 @@ export class Auth extends Component {
                 post: post
             }),
             headers: {
-              "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
         })
         console.log(data)
-        console.log(data.status)
     }
   render() {
     return (
       <_Auth>
           <p>Authentication form</p>
             <form onSubmit={this.formSubmit}>
-                <label htmlFor="">
+                <label htmlFor="username">
                 username
                     <input type="text" name='username' value={this.state.value} onBlur={this.checkusername}/>
                 </label>
-                <label htmlFor="">
+                <label htmlFor="email">
                 email
                     <input type="email" name='email' value={this.state.value} onBlur={this.checkemail}/>
                 </label>
-                <label htmlFor="">
+                <label htmlFor="password">
                 password
                     <input type="password" name='password' value={this.state.value} onBlur={this.checkpassword}/>
                 </label>
-                <label htmlFor="">
+                <label htmlFor="password2">
                 confirm password
                     <input type="password" name='password2' value={this.state.value} onBlur={this.checkpassword2}/>
-                </label>
-                <label htmlFor="">
-                post
-                    <textarea type="text" name='post' value={this.state.value} onBlur={this.checkpost}/>
-                </label>
-                <label htmlFor="">
-                image
-                    <input type="file" name='image' value={this.state.value} onBlur={this.checkimg}/>
                 </label>
                 <label htmlFor="">
                     <input type="submit"/>
                 </label>
             </form>
-            <p>{this.state.value}</p>
       </_Auth>
     )
   }
