@@ -33,6 +33,7 @@
   "dependencies": {
     "@koa/cors": "^2.2.2",
     "babel-polyfill": "^6.26.0",
+    "bcrypt": "^3.0.2",
     "concurrently": "^4.1.0",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",

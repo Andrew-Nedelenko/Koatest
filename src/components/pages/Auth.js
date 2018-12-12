@@ -4,14 +4,16 @@ import PropTypes from 'prop-types'
 
 export class Auth extends Component {
     static propTypes = {
-        value: PropTypes.string
+        username: PropTypes.string,
+        email: PropTypes.string,
+        password: PropTypes.string,
+        password2: PropTypes.string,
     }
     state = {
         username: '',
         email: '',
         password: '',
         password2: '',
-        post: '',
         errors: []
     }
     checkusername = e => {
@@ -34,14 +36,13 @@ export class Auth extends Component {
     formSubmit = async e => {
         e.preventDefault()
         
-        const {username, email, password, post} = this.state;
+        const {username, email, password} = this.state;
         const data = await fetch('http://localhost:3201', {
             method: "POST",
             body: JSON.stringify({
                 username: username,
                 email: email,
-                password: password,
-                post: post
+                password: password
             }),
             headers: {
                 "Content-Type": "application/json"
@@ -127,7 +128,12 @@ const _Auth = styled.div`
         }
         input[type='submit']{
             border: none;
+            border-radius: 5px;
+            width: 410px;
             cursor: pointer;
+            &:hover{
+                color: grey;
+            }
         }
 
         textarea{
