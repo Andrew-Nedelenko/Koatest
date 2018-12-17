@@ -131,6 +131,9 @@ const _Auth = styled.div`
             border-radius: 5px;
             width: 410px;
             cursor: pointer;
+            @media (max-width: 450px) {
+                width: 260px;
+            }
             &:hover{
                 color: grey;
             }

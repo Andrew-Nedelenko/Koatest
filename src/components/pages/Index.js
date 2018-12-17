@@ -6,6 +6,7 @@ import {color} from '../layouts/Footer'
 
 export class Index extends Component {
     render() {
+        document.title = 'Home'
     return (
         <_Index>
             <div className="main">

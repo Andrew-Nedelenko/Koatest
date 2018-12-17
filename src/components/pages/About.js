@@ -19,6 +19,7 @@ export class About extends Component {
   render() {
     const d = "M100 85 L100 10 L410 10 L410 370 L100 370 L100 85 L180 85 L385 290 L385 10"
     const { borderWidth, size, gridColor } = this.state
+    document.title = 'About'
     return (
       <div>
           <NavBar/>
