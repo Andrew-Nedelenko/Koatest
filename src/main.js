@@ -7,6 +7,7 @@ import {Index} from './components/pages/Index'
 import {About} from './components/pages/About'
 import {Users} from './components/Users'
 import {Auth} from './components/pages/Auth'
+import {Figure} from './components/pages/Figure'
 
 class Main extends Component {
   render() {    
@@ -18,6 +19,7 @@ class Main extends Component {
             <Route path='/about' component={About}/>
             <Route path='/users' component={Users}/>
             <Route path='/auth' component={Auth}/>
+            <Route path='/figure' component={Figure}/>
           <Footer/>
           </div>
       </BrowserRouter>
