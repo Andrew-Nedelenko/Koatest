@@ -31,5 +31,5 @@ app.use(async (ctx, next) => {
 
 
 
-
-app.listen(3201);
+const port = process.env.port || 8000;
+app.listen(port);
