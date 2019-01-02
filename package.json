@@ -4,11 +4,12 @@
   "description": "testing koa",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/index.html",
+    "predeploy": "parcel build src/index.html",
     "back": "nodemon",
     "front": "parcel -p 4000 watch src/index.html --open --no-cache",
     "all": "concurrently \"parcel -p 4000 watch src/index.html --open --no-cache\" \"nodemon\"",
-    "start": "node index.js"
+    "start": "node index.js",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,12 @@
   "bugs": {
     "url": "https://github.com/Synacten/Koatest/issues"
   },
-  "homepage": "https://github.com/Synacten/Koatest#readme",
+  "homepage": "https://github.com/Synacten/Koatest",
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "gh-pages": "^2.0.1",
     "nodemon": "^1.18.4",
     "parcel-bundler": "^1.10.3"
   },
