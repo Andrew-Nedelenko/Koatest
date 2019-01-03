@@ -8,7 +8,7 @@
     "back": "nodemon",
     "front": "parcel -p 4000 watch src/index.html --open --no-cache",
     "all": "concurrently \"parcel -p 4000 watch src/index.html --open --no-cache\" \"nodemon\"",
-    "start": "node index.js"
+    "start": "npm run build && node index.js"
   },
   "repository": {
     "type": "git",
