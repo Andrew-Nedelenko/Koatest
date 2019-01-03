@@ -8,7 +8,7 @@
     "back": "nodemon",
     "front": "parcel -p 4000 watch src/index.html --open --no-cache",
     "all": "concurrently \"parcel -p 4000 watch src/index.html --open --no-cache\" \"nodemon\"",
-    "start": "parcel build src/index.html && node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -27,11 +27,11 @@
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "parcel-bundler": "^1.10.3",
     "nodemon": "^1.18.4"
   },
   "dependencies": {
     "@koa/cors": "^2.2.2",
-    "parcel-bundler": "^1.10.3",
     "babel-polyfill": "^6.26.0",
     "concurrently": "^4.1.0",
     "koa": "^2.5.3",
