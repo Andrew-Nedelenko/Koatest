@@ -15,12 +15,13 @@ export class NavBar extends Component {
               </li>
               <li><Link to="/about">About</Link>
               <ul>
-                  <li><Link to="/figure">Fugure 1</Link></li>
-                  <li><a href="#">Links</a></li>
+                  <li><Link to="/task1">Task 1</Link></li>
+                  <li><Link to="/figure">Fugure Example</Link></li>
                 </ul>
               </li>
                   <li><Link to="/auth">Auth</Link></li>
             </ul>
+            
       </_NavBar>
     )
   }
@@ -33,7 +34,7 @@ const _NavBar = styled.nav`
   background-color: gold;
   width: 100%;
   height: 50px;
-  opacity: .8;
+  opacity: 1;
   z-index: 30;
   font-family: ${Ubuntu};
   ul{

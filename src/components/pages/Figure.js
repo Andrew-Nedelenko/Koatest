@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {NavBar} from '../layouts/NavBar'
 
 export class Figure extends Component {
     constructor() {
@@ -31,7 +30,6 @@ export class Figure extends Component {
       }, '');
     return (
     <div>
-        <NavBar/>
       <_Figure>
         <svg height='100vh' width={size}>
             <path
