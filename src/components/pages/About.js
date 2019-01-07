@@ -3,9 +3,6 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 export class About extends Component {
-  static PropTypes = {
-    zoomFigure: zoomFigure.number.isRequired
-  }
   constructor () {
     super()
     this.state = {
