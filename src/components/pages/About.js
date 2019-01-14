@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 
 export class About extends Component {
   constructor () {
@@ -16,7 +15,7 @@ export class About extends Component {
       rotateZ: 0,
       clientX: 0,
       clientY: 0,
-      zoomFigure: 1,
+      zoomFigure: .9
     }
   }
 
@@ -53,8 +52,9 @@ export class About extends Component {
   }
 
   zoomFigInc = () => {
+    console.log(this.state.zoomFigure)
     this.setState(({ zoomFigure }) => ({
-      zoomFigure : (zoomFigure + .11)
+      zoomFigure : zoomFigure += .1
     }));
   }
 
@@ -125,22 +125,22 @@ export class About extends Component {
               </label>
               <label>
                 Rotate-X:{rotateX}
-                <input type="range" min='-90' max='90' value={rotateX} onChange={this.xRotate} />
-                <input type="number" min='-90' max='90' value={rotateX} onChange={this.xRotate} />
+                <input type="range" min='0' max='90' value={rotateX} onChange={this.xRotate} />
+                <input type="number" min='0' max='90' value={rotateX} onChange={this.xRotate} />
               </label>
               <label>
                 Rotate-Y:{rotateY}
-                <input type="range" min='-90' max='90' value={rotateY} onChange={this.yRotate} />
+                <input type="range" min='0' max='90' value={rotateY} onChange={this.yRotate} />
                 <input type="number" min='1' max='90' value={rotateY} onChange={this.yRotate} />
               </label>
               <label>
                 Rotate-Z:{rotateZ}
-                <input type="range" min='-90' max='90' value={rotateZ} onChange={this.zRotate} />
-                <input type="number" min='-90' max='90' value={rotateZ} onChange={this.zRotate} />
+                <input type="range" min='0' max='90' value={rotateZ} onChange={this.zRotate} />
+                <input type="number" min='0' max='90' value={rotateZ} onChange={this.zRotate} />
               </label>
               <label>
                 Zoom:{zoomFigure}
-                <p onClick={this.zoomFigInc}>+1</p> 
+                <span onClick={this.zoomFigInc}>+1</span> 
               </label>
             </form>
           </_FormBlock>
@@ -190,6 +190,12 @@ const _FormBlock = styled.div`
   top: 50px;
   p{
     padding: 5px 20px 0 20px;
+  }
+  span{
+    display: block;
+    background-color: greenyellow;
+    margin-left: 15px;
+    cursor: pointer;
   }
   form{
     padding: 20px;
