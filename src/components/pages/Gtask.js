@@ -9,15 +9,28 @@ export class Gtask extends Component {
     this.state = {
       clientX : 0,
       clientY : 0,
+      frame: 0
     }
+    setInterval(this.nextFrame.bind(this), 25)
   }
   coordinate = (event) => {
     console.log(`X - coordiante ${event.clientX}`)
     console.log(`Y - coordiante ${event.clientY}`)
     this.setState({clientX: event.clientX})
   }
+  nextFrame() {
+    const {frame} = this.state
+
+    this.setState({ frame: frame + 1});
+}
   render() {
     document.title = 'Task'
+    const { frame } = this.state;
+    const stroke = 1;
+    const size = 520;
+    const padding = 0;
+    const { sin, cos, tan, sqrt, pow, PI } = Math;
+    const d = "M10 0 L10 1 L20 1 2 20 30 3 50 22 40 1 50 1 40 1"
     return (
         <div>
           <Grid_flow>
@@ -36,6 +49,16 @@ export class Gtask extends Component {
             </svg>
           </Grid_flow>
           <_Gtask onMouseMove={this.coordinate}></_Gtask>
+          <_PicTask>
+          <svg width="100%" height="100%">
+            <path 
+              d={d}
+              stroke="green"
+              strokeWidth={stroke}
+              fill="transparent"
+            />
+          </svg>
+          </_PicTask>
         </div>
     )
   }
@@ -45,4 +68,9 @@ export const _Gtask = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
+`
+export const _PicTask = styled.div`
+  position: absolute;
+  top: 120px;
+  left: 200px;
 `

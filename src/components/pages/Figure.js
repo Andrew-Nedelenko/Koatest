@@ -18,12 +18,13 @@ export class Figure extends Component {
     }
   render() {
       const { frame } = this.state;
+      const {sin, cos, tan, pow, sqrt } = Math;
       const size = 900;
       const padding = 20;
       const stroke = 1;
       const d = new Array(1100).fill(0).reduce((result, $, index) => {
-        const x = (size / 4 - padding) * Math.sin(2 * index + frame / 620);
-        const y = (size / 2 - padding) * Math.tan(.2 * index + frame / 500);
+        const x = (size / 4 - padding) * sin(1.2 * index + frame / 620);
+        const y = (size / 2 - padding) * tan(.1 * index + frame / 500);
         const c = index === 0 ? 'M' : 'L';
 
         return result + `${c}${x + size / 2} ${y + size / 2}`
