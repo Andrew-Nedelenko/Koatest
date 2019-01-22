@@ -1,24 +1,18 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import {color} from '../layouts/Footer'
+import React from 'react';
+import styled from 'styled-components';
+import { color } from '../layouts/Footer';
 
 
-
-export class Index extends Component {
-    render() {
-        document.title = 'Home'
-    return (
-        <_Index>
-            <div className="main">
-                main
-            </div>
-      </_Index>
-    )
-  }
-}
+export const Index = () => (
+  <IndexC>
+    <div className="main">
+        main
+    </div>
+  </IndexC>
+);
 
 
-export const _Index = styled.main`
+export const IndexC = styled.main`
     width: 100%;
     margin-top: 50px;
     .main{
@@ -26,4 +20,4 @@ export const _Index = styled.main`
         background-color: palegoldenrod;
         color: ${color}
     }
-`
+`;

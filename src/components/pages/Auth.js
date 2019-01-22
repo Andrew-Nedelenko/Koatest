@@ -1,89 +1,95 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+// import PropTypes from 'prop-types';
+import fetch from 'isomorphic-fetch';
 
 export class Auth extends Component {
-    static propTypes = {
-        username: PropTypes.string,
-        email: PropTypes.string,
-        password: PropTypes.string,
-        password2: PropTypes.string,
-    }
+  // static propTypes = {
+  //   username: PropTypes.string.isRequired,
+  //   email: PropTypes.string.isRequired,
+  //   password: PropTypes.string.isRequired,
+  //   password2: PropTypes.string.isRequired,
+  // }
+
     state = {
-        username: '',
-        email: '',
-        password: '',
-        password2: '',
-        errors: []
-    }
-    checkusername = e => {
-        console.log(event.target.value)
-        this.state.username = event.target.value
-    }
-    checkemail = e => {
-        console.log(event.target.value)
-        this.state.email = event.target.value
-    }
-    checkpassword = e => {
-        console.log(event.target.value)
-        this.state.password = event.target.value
-    }
-    checkpassword2 = e => {
-        console.log(event.target.value)
-        this.state.password2 = event.target.value
+      username: '',
+      email: '',
+      password: '',
+      password2: '',
     }
 
-    formSubmit = async e => {
-        e.preventDefault()
-        
-        const {username, email, password} = this.state;
-        const data = await fetch('http://localhost:3201', {
-            method: "POST",
-            body: JSON.stringify({
-                username: username,
-                email: email,
-                password: password
-            }),
-            headers: {
-                "Content-Type": "application/json"
-            },
-        })
-        console.log(data)
+    checkusername = (e) => {
+      console.log(e.target.value);
+      this.state.username = e.target.value;
     }
-  render() {
-    return (
-      <_Auth>
+
+    checkemail = (e) => {
+      console.log(e.target.value);
+      this.state.email = e.target.value;
+    }
+
+    checkpassword = (e) => {
+      console.log(e.target.value);
+      this.state.password = e.target.value;
+    }
+
+    checkpassword2 = (e) => {
+      console.log(e.target.value);
+      this.state.password2 = e.target.value;
+    }
+
+    formSubmit = async (e) => {
+      e.preventDefault();
+
+      const { username, email, password } = this.state;
+      const data = await fetch('http://localhost:3201', {
+        method: 'POST',
+        body: JSON.stringify({
+          username,
+          email,
+          password
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
+      console.log(data);
+    }
+
+    render() {
+      const { value } = this.state;
+      return (
+        <AuthC>
           <p>Authentication form</p>
-            <form onSubmit={this.formSubmit}>
-                <label htmlFor="username">
+          <form onSubmit={this.formSubmit}>
+            <label htmlFor="username">
                 username
-                    <input type="text" name='username' value={this.state.value} onBlur={this.checkusername}/>
-                </label>
-                <label htmlFor="email">
+              <input type="text" name="username" value={value} onBlur={this.checkusername} />
+            </label>
+            <label htmlFor="email">
                 email
-                    <input type="email" name='email' value={this.state.value} onBlur={this.checkemail}/>
-                </label>
-                <label htmlFor="password">
+              <input type="email" name="email" value={value} onBlur={this.checkemail} />
+            </label>
+            <label htmlFor="password">
                 password
-                    <input type="password" name='password' value={this.state.value} onBlur={this.checkpassword}/>
-                </label>
-                <label htmlFor="password2">
+              <input type="password" name="password" value={value} onBlur={this.checkpassword} />
+            </label>
+            <label htmlFor="password2">
                 confirm password
-                    <input type="password" name='password2' value={this.state.value} onBlur={this.checkpassword2}/>
-                </label>
-                <label htmlFor="">
-                    <input type="submit"/>
-                </label>
-            </form>
-      </_Auth>
-    )
-  }
+              <input type="password" name="password2" value={value} onBlur={this.checkpassword2} />
+            </label>
+            <label htmlFor="submit">
+              <input type="submit" id="submit" />
+            </label>
+          </form>
+        </AuthC>
+      );
+    }
 }
 
 
-
-export const Ubuntu = "'Ubuntu', sans-serif;"
-const _Auth = styled.div`
+export const Ubuntu = "'Ubuntu', sans-serif;";
+const AuthC = styled.div`
     margin: 80px 0 0 0;
     width: 100%;
     @import url('https://fonts.googleapis.com/css?family=Ubuntu');
@@ -151,5 +157,4 @@ const _Auth = styled.div`
             }
         }
     }
-`
-
+`;

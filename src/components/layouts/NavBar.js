@@ -1,33 +1,31 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import {Link} from 'react-router-dom'
-import {Ubuntu} from '../pages/Auth'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Ubuntu } from '../pages/Auth';
 
-export class NavBar extends Component {
-  render() {
-    return (
-        <_NavBar>
-            <ul>
-              <li><Link to="/">Home</Link>
-                <ul>
-                  <li><Link to="/users">Users</Link></li>
-                </ul>
-              </li>
-              <li><Link to="/about">About</Link>
-              <ul>
-                  <li><Link to="/task1">Task 1</Link></li>
-                  <li><Link to="/figure">Fugure Example</Link></li>
-                </ul>
-              </li>
-                  <li><Link to="/auth">Auth</Link></li>
-            </ul>
-            
-      </_NavBar>
-    )
-  }
-}
+const NavBar = () => (
+  <NavBarC>
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+        <ul>
+          <li><Link to="/users">Users</Link></li>
+        </ul>
+      </li>
+      <li>
+        <Link to="/about">About</Link>
+        <ul>
+          <li><Link to="/task1">Task 1</Link></li>
+          <li><Link to="/figure">Fugure Example</Link></li>
+        </ul>
+      </li>
+      <li><Link to="/auth">Auth</Link></li>
+    </ul>
+  </NavBarC>
+);
 
-const _NavBar = styled.nav`
+
+const NavBarC = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
@@ -67,4 +65,6 @@ const _NavBar = styled.nav`
       }
     }
   }
-`
+`;
+
+export default NavBar;
