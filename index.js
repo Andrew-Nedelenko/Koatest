@@ -2,12 +2,13 @@ const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const cors = require('@koa/cors');
 const helmet = require('koa-helmet');
-const serve = require('koa-static-server');
+// const serve = require('koa-static-server');
 const router = require('./routes/router');
 
 const app = new Koa();
 
-app.use(serve({ rootDir: 'dist' }))
+app
+// .use(serve({ rootDir: 'dist' }))
   .use(cors())
   .use(helmet())
   .use(bodyParser())
