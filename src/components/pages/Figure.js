@@ -19,14 +19,14 @@ class Figure extends Component {
   render() {
     const { frame } = this.state;
     const {
-      sin, tan,
+      sin, cos
     } = Math;
     const size = 900;
     const padding = 20;
     const stroke = 1;
-    const d = new Array(1100).fill(0).reduce((result, $, index) => {
-      const x = (size / 4 - padding) * sin(3 * index + frame / 620);
-      const y = (size / 2 - padding) * tan(0.1 * index + frame / 500);
+    const d = new Array(2500).fill(0).reduce((result, $, index) => {
+      const x = (size / 2 - padding) * cos(0.1 * index) * sin(1 * index);
+      const y = (size / 2 - padding) * sin(0.1 * index) * cos(1 * index + frame / 300);
       const c = index === 0 ? 'M' : 'L';
 
       return `${result}${c}${x + size / 2} ${y + size / 2}`;
