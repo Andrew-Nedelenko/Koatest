@@ -23,6 +23,9 @@ class CompilerOut extends PureComponent {
 
 const CompilerOutC = styled.div`
     font-family: ${Ubuntu};
+    h3{
+        margin-top: 50px;
+    }
 `;
 
 export default CompilerOut;

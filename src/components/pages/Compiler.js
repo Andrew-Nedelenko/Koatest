@@ -9,7 +9,7 @@ class Compiler extends PureComponent {
     super();
     this.state = {
       areaValue: '',
-      output: [],
+      output: '',
       error: '',
     };
   }
