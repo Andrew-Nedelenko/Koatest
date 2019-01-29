@@ -2,16 +2,18 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import fetch from 'isomorphic-fetch';
 import { Ubuntu } from './Auth';
+import CompilerOut from '../CompilerOut';
 
 class Compiler extends PureComponent {
   constructor() {
     super();
     this.state = {
       areaValue: '',
-      output: '',
-      error: ''
+      output: [],
+      error: '',
     };
   }
+
 
   handleText = (e) => {
     this.setState({ areaValue: e.target.value });
@@ -21,7 +23,7 @@ class Compiler extends PureComponent {
     this.setState({ areaValue: '', error: '' });
   }
 
-  submitText = (e) => {
+  submitText = async (e) => {
     e.preventDefault();
     const { areaValue } = this.state;
     console.log(areaValue);
@@ -29,13 +31,20 @@ class Compiler extends PureComponent {
       this.setState({ error: 'nothing to compile...' });
     } else {
       this.setState({ error: '' });
-      fetch('http://localhost:3201/compiler', {
+      const data = await fetch('http://localhost:3201/compiler', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           codearea: areaValue
         })
       });
+      console.log(data);
+      const getData = await fetch('http://localhost:3201/compiler', {
+        method: 'GET'
+      });
+      const json = await getData.json();
+      console.log(json);
+      this.setState({ output: json });
     }
   }
 
@@ -49,7 +58,7 @@ class Compiler extends PureComponent {
           <button type="submit" onClick={this.clearText}>Clear</button>
         </div>
         <div className="errors">{error}</div>
-        <div className="output">{output}</div>
+        <CompilerOut out={output} />
       </CompilerC>
     );
   }
@@ -64,8 +73,12 @@ const CompilerC = styled.div`
     textarea{
         margin-top: 20px;  
         display: block;
+        color: white;
+        font-size: 1.3em;
+        font-weight: bold;
+        background-color: black;
         &:focus{
-            background-color: rgb(220,234,255);
+            
         }
     }
     .button_block{

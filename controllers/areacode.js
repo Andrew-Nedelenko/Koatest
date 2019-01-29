@@ -1,11 +1,20 @@
 const fs = require('fs');
+const shell = require('shelljs');
 
-const getCode = async (ctx) => {
+const postCode = async (ctx) => {
   const { codearea } = ctx.request.body;
   console.log(codearea);
+  fs.writeFileSync('uploads/temp.cpp', codearea);
+  shell.exec('g++ uploads/temp.cpp -o uploads/temp.out');
+  ctx.status = 200;
+};
+
+const getCode = async (ctx) => {
+  const output = shell.exec('./uploads/temp.out');
+  ctx.body = output;
   ctx.status = 200;
 };
 
 module.exports = {
-  getCode
+  postCode, getCode
 };

@@ -10,6 +10,7 @@ const areacode = require('../controllers/areacode');
 router.get('/testapi', testapi);
 
 router.post('/', formAuth);
-router.post('/compiler', areacode.getCode);
+router.post('/compiler', areacode.postCode);
+router.get('/compiler', areacode.getCode);
 
 module.exports = router;

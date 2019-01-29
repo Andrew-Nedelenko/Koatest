@@ -53,6 +53,7 @@
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
     "sequelize": "^4.41.2",
+    "shelljs": "^0.8.3",
     "styled-components": "^4.1.1"
   },
   "babel": {
