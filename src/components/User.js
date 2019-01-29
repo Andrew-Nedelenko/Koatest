@@ -23,7 +23,7 @@ class User extends PureComponent {
         <h2>{name}</h2>
         <h3>{email}</h3>
         <h3>{hoobies}</h3>
-        <img src={img} alt="" />
+        <img src={img} alt={name} />
       </UserC>
 
     );

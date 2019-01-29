@@ -13,20 +13,21 @@ const NavBar = () => (
         </ul>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/about">MathModel</Link>
         <ul>
           <li><Link to="/task1">Task 1</Link></li>
           <li><Link to="/figure">Fugure Example</Link></li>
         </ul>
       </li>
       <li><Link to="/auth">Auth</Link></li>
+      <li><Link to="compiler">Compiler</Link></li>
     </ul>
   </NavBarC>
 );
 
 
 const NavBarC = styled.nav`
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   background-color: gold;
@@ -61,7 +62,11 @@ const NavBarC = styled.nav`
         }
       }
       a{
+        color: black;
         text-decoration: none;
+        &:hover{
+          color: green;
+        }
       }
     }
   }
