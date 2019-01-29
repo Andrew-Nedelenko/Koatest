@@ -9,7 +9,8 @@ module.exports = {
         }
     },
     "plugins": [
-        "react"
+        "react",
+        "styled-components-config"
     ],
     "extends": "airbnb",
     "rules": {
