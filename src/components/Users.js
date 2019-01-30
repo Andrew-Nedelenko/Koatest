@@ -19,11 +19,9 @@ class Users extends Component {
       } else {
         const json = await response.json();
         this.setState({ saveData: json });
-        const { saveData } = this.state;
-        console.log(saveData);
       }
     } catch (error) {
-      console.log('error from fetching');
+      throw new Error();
     }
   }
 

@@ -3,7 +3,6 @@ const shell = require('shelljs');
 
 const postCode = async (ctx) => {
   const { codearea } = ctx.request.body;
-  console.log(codearea);
   fs.writeFileSync('uploads/temp.cpp', codearea);
   shell.exec('g++ uploads/temp.cpp -o uploads/temp.out');
   ctx.status = 200;

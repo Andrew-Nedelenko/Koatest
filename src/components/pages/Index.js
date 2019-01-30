@@ -14,7 +14,6 @@ export const Index = () => (
 
 export const IndexC = styled.main`
     width: 100%;
-    margin-top: 50px;
     .main{
         text-align: center;
         background-color: palegoldenrod;

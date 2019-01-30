@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import fetch from 'isomorphic-fetch';
+import Button from '@material-ui/core/Button';
 import { Ubuntu } from './Auth';
 import CompilerOut from '../CompilerOut';
 
@@ -20,30 +21,27 @@ class Compiler extends PureComponent {
   }
 
   clearText = () => {
-    this.setState({ areaValue: '', error: '' });
+    this.setState({ areaValue: '', error: '', output: '' });
   }
 
   submitText = async (e) => {
     e.preventDefault();
     const { areaValue } = this.state;
-    console.log(areaValue);
     if (areaValue === '') {
       this.setState({ error: 'nothing to compile...' });
     } else {
       this.setState({ error: '' });
-      const data = await fetch('http://localhost:3201/compiler', {
+      await fetch('http://localhost:3201/compiler', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           codearea: areaValue
         })
       });
-      console.log(data);
       const getData = await fetch('http://localhost:3201/compiler', {
         method: 'GET'
       });
       const json = await getData.json();
-      console.log(json);
       this.setState({ output: json });
     }
   }
@@ -54,8 +52,8 @@ class Compiler extends PureComponent {
       <CompilerC>
         <textarea name="codearea" id="codearea" cols="50" rows="20" value={areaValue} onInput={this.handleText} />
         <div className="button_block">
-          <button type="submit" onClick={this.submitText}>Compiling</button>
-          <button type="submit" onClick={this.clearText}>Clear</button>
+          <Button className="btn" variant="contained" color="primary" type="submit" onClick={this.submitText}>Compiling</Button>
+          <Button className="btn" variant="contained" color="primary" type="submit" onClick={this.clearText}>Clear</Button>
         </div>
         <div className="errors">{error}</div>
         <CompilerOut out={output} />
@@ -82,10 +80,8 @@ const CompilerC = styled.div`
         }
     }
     .button_block{
-        button{
-            padding: 5px;
-            font-family: ${Ubuntu};
-            margin: 10px 0 0 10px;
+        .btn{
+            margin: 12px 7px;
         }
     }
 `;
