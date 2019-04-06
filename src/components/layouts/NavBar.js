@@ -20,7 +20,8 @@ const NavBar = () => (
         </ul>
       </li>
       <li><Link to="/auth">Auth</Link></li>
-      <li><Link to="compiler">Compiler</Link></li>
+      <li><Link to="/compiler">Compiler</Link></li>
+      <li><Link to="redux">Redux</Link></li>
     </ul>
   </NavBarC>
 );

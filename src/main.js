@@ -8,6 +8,7 @@ import { About } from './components/pages/About';
 import { Auth } from './components/pages/Auth';
 import { Gtask } from './components/pages/Gtask';
 import Compiler from './components/pages/Compiler';
+import Red from './components/pages/Red';
 import NavBar from './components/layouts/NavBar';
 import Users from './components/Users';
 import Figure from './components/pages/Figure';
@@ -23,6 +24,7 @@ const Main = () => (
       <Route path="/figure" component={Figure} />
       <Route path="/task1" component={Gtask} />
       <Route path="/compiler" component={Compiler} />
+      <Route path="/redux" component={Red} />
       <Footer />
     </div>
   </BrowserRouter>

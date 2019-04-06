@@ -21,6 +21,9 @@ module.exports = {
         "no-console": 1,
         "no-unexpected-multiline": "warn",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "linebreak-style": 0,
+        "react/jsx-one-expression-per-line": 'off',
+    
     },
     "settings": {
         "react": {
